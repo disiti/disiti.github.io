@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://arkben.053200.xyz</id>
+    <title></title>
+    <updated>2026-03-22T13:33:42.442Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://arkben.053200.xyz"/>
+    <link rel="self" href="https://arkben.053200.xyz/atom.xml"/>
+    <subtitle>但念无常，慎勿放逸</subtitle>
+    <logo>https://arkben.053200.xyz/images/avatar.png</logo>
+    <icon>https://arkben.053200.xyz/favicon.ico</icon>
+    <rights>All rights reserved 2026, </rights>
+    <entry>
+        <title type="html"><![CDATA[安忍不动如大地  静虑深密如秘藏]]></title>
+        <id>https://arkben.053200.xyz/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/</id>
+        <link href="https://arkben.053200.xyz/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/">
+        </link>
+        <updated>2026-03-22T06:33:49.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://arkben.053200.xyz/post-images/1774186136569.JPG" alt="" loading="lazy"><br>
+青岛湛山寺，是国内最年轻的天台宗道场，始建于1931年，1934年动工，1945年全部竣工。<br>
+湛山寺由天台宗大德倓虚大师创建，虚云长老也曾在这里讲学，两位高僧共护这座山海古刹。<br>
+近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。<br>
+天台宗讲究<strong>教观总持</strong>，以教明理，以观修行，明理与实修并行，不偏不废。</p>
+]]></content>
+    </entry>
+</feed>
