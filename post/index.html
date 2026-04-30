@@ -42,7 +42,7 @@
     var h = new Date().getHours();
     return h >= 6 && h < 18;
   }
-  var themeMode = "auto";
+  var themeMode = "light";
   function setDark()    { localStorage.setItem("isDarkMode", "1"); document.documentElement.classList.add("dark"); }
   function removeDark() { localStorage.setItem("isDarkMode", "0"); document.documentElement.classList.remove("dark"); }
   var saved = localStorage.getItem("isDarkMode");
