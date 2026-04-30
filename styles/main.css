@@ -1931,3 +1931,26 @@ body.mobile-nav-open {
         font-size: 0.8em;
     }
 }
+
+/* 覆盖原有左侧缩略图布局 */
+.post-with-thumb {
+    display: block;
+}
+
+/* 新的全宽缩略图布局 */
+.post-thumb-full {
+    width: 100%;
+    margin: var(--spacing-md) 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-bg-secondary);
+}
+
+.post-thumb-full img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    display: block;
+}
+
