@@ -1,37 +1,341 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>空山一隅</title>
-	<link rel="stylesheet" href="/styles/main.css">
-	<style>
-		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-		.site-header { text-align: center; padding: 40px 0; border-bottom: 1px solid #eee; }
-		.site-title { font-size: 2em; margin: 0; }
-		.site-description { color: #666; margin-top: 10px; }
-		.post { margin: 40px 0; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-		.post-title a { color: #333; text-decoration: none; }
-		.post-title a:hover { color: #0066cc; }
-		.post-meta { color: #999; font-size: 0.9em; margin-top: 5px; }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>空山一隅</title>
+
+    
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta property="og:site_name" content="空山一隅">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    
+    <meta property="og:image" content="/images/avatar.png">
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+
+    
+    
+
+    
+    
+    <link rel="alternate" type="application/atom+xml" title="空山一隅" href="/atom.xml">
+    
+
+    
+    <link rel="stylesheet" href="/styles/main.css">
+
+    
+    <style>
+    :root {
+      --color-primary: #4270f5;
+      --color-primary-hover: #c62828;
+      --container-width: 720px;
+      --font-stack-body: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    </style>
+
+    
+    <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('kehua-theme');
+        var preset = "light";
+        var theme;
+        if (saved === 'dark' || saved === 'light') {
+          theme = saved;
+        } else if (preset === 'dark' || preset === 'light') {
+          theme = preset;
+        } else {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    })();
+    </script>
+
+    
+    
+    
+
+    
+<meta name="description" content="something I wanna say...">
 </head>
-<body>
-	<header class="site-header">
-		<h1 class="site-title">空山一隅</h1>
-		<p class="site-description">something I wanna say...</p>
-	</header>
-	<main class="site-main">
-			<article class="post">
-				<h2 class="post-title"><a href="/post/O8IqUW/">new posts</a></h2>
-				<div class="post-meta">2026-04-30</div>
-			</article>
-		
-			<article class="post">
-				<h2 class="post-title"><a href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/">安忍不动如大地  静虑深密如秘藏</a></h2>
-				<div class="post-meta">2026-03-22</div>
-			</article>
-		</main>
-	<footer style="text-align: center; padding: 40px 0; color: #999;">Powered by Gridea Pro</footer>
+<body class="home">
+    
+<header class="header" role="banner">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="空山一隅">
+            
+                <span class="logo-text">空山一隅</span>
+            
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+            
+                <a href="/post" class="nav-link">博客</a>
+            
+                <a href="/memos" class="nav-link">闪念</a>
+            
+        </nav>
+
+        <div class="header-actions">
+            <button class="btn-icon" id="theme-toggle" type="button" title="切换主题（Cmd/Ctrl+D）" aria-label="切换深浅模式">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            
+            <button class="btn-icon" id="search-toggle" type="button" title="搜索（Cmd/Ctrl+K）" aria-label="搜索">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            
+
+            <button class="btn-icon mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="打开移动端菜单" aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+    
+        <a href="/post" class="mobile-nav-link">博客</a>
+    
+        <a href="/memos" class="mobile-nav-link">闪念</a>
+    
+</div>
+
+
+
+
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
+    <div class="search-modal-content">
+        <div class="search-input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="搜索文章、闪念、标签..." autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+            <button type="button" class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+        </div>
+
+        <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果">
+            <p class="search-empty">输入关键词开始搜索 · 支持标题 / 摘要 / 标签 / 闪念</p>
+        </div>
+
+        <div class="search-shortcuts">
+            <span><kbd>↵</kbd> 打开</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> 切换</span>
+            <span><kbd>esc</kbd> 关闭</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <main class="main" role="main">
+        
+<div class="container">
+
+    
+    
+
+    
+    
+        
+            
+        
+            
+        
+    
+
+    
+    <div class="post-list">
+        
+            
+                
+                    
+                        
+<article class="post post-with-thumb">
+    
+    <div class="post-thumb">
+        <a href="/post/O8IqUW/" aria-label="new posts">
+            <img src="/post-images/O8IqUW.JPG" alt="new posts" loading="lazy">
+        </a>
+    </div>
+    <div class="post-content">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/O8IqUW/">new posts</a>
+        </h2>
+
+        <p class="post-excerpt">posts test 测试  测试  测试</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-04-30T22:02:33+08:00">2026-04-30T22:02:33+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">1 min read 分钟阅读</span>
+        </div>
+
+    
+    </div>
+    
+</article>
+
+                    
+                
+            
+                
+                    
+                        
+<article class="post post-with-thumb">
+    
+    <div class="post-thumb">
+        <a href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/" aria-label="安忍不动如大地  静虑深密如秘藏">
+            <img src="/post-images/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang.jpg" alt="安忍不动如大地  静虑深密如秘藏" loading="lazy">
+        </a>
+    </div>
+    <div class="post-content">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/">安忍不动如大地  静虑深密如秘藏</a>
+        </h2>
+
+        <p class="post-excerpt">青岛湛山寺，是国内最年轻的天台宗道场，始建于1931年，1934年动工，1945年全部竣工。
+湛山寺由天台宗大德倓虚大师创建，虚云长老也曾在这里讲学，两位高僧共护这座山海古刹。
+近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。
+天台宗讲究教观总持，以教明理，以观修行，明理与实修并行，不偏不废...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-22T14:33:49+08:00">2026-03-22T14:33:49+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">1 min read 分钟阅读</span>
+        </div>
+
+    
+    </div>
+    
+</article>
+
+                    
+                
+            
+        
+    </div>
+
+    
+
+
+
+
+</div>
+
+    </main>
+
+    
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        
+        <p class="footer-text">克制 · 留白 · 一记一画</p>
+        
+
+        
+        <p class="footer-copyright">&copy; 2026 空山一隅</p>
+        
+
+        
+        <p class="footer-theme">Theme by <a href="https://kehua.me" target="_blank" rel="noopener noreferrer">kehua</a> · 移植 by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></p>
+        
+    </div>
+</footer>
+
+
+<button class="back-to-top" id="back-to-top" type="button" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+
+
+    
+    
+
+<script id="kehua-search-data" type="application/json">
+{
+  "posts": [
+    {
+      "title": "new posts",
+      "link": "/post/O8IqUW/",
+      "date": "2026-04-30T22:02:33+08:00",
+      "excerpt": "posts test 测试  测试  测试",
+      "tags": []
+    },{
+      "title": "安忍不动如大地  静虑深密如秘藏",
+      "link": "/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/",
+      "date": "2026-03-22T14:33:49+08:00",
+      "excerpt": "青岛湛山寺，是国内最年轻的天台宗道场，始建于1931年，1934年动工，1945年全部竣工。\n湛山寺由天台宗大德倓虚大师创建，虚云长老也曾在这里讲学，两位高僧共护这座山海古刹。\n近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。\n天台...",
+      "tags": []
+    }
+  ],
+  "tags": [
+    
+  ]
+}
+</script>
+
+
+
+    
+    <script src="/scripts/main.js" defer></script>
+
+    
+    
+
+    
 </body>
 </html>

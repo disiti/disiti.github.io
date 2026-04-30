@@ -1,51 +1,250 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="robots" content="noindex">
-<title>页面未找到 | 空山一隅</title>
-<link rel="icon" href="/media/images/mango-logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles/bootstrap.min.css">
-<link rel="stylesheet" href="/styles/bootstrap-icons.css">
-<link rel="stylesheet" href="/styles/main.css">
-<style>
-  body { background: #f7f7f7; }
-  .dark body, html.dark body { background: #212121; }
-  .mango-404 {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    text-align: center;
-  }
-  .mango-404 h2 { font-size: 32px; font-weight: 600; margin: 16px 0; }
-  .mango-404 p { font-size: 16px; color: #666; }
-  .mango-404 a { color: var(--mango-brand, #4270f5); border-bottom: 1px solid currentColor; }
-  .mango-404 svg { width: 200px; height: 200px; }
-  html.dark .mango-404 p { color: #c0c2cc; }
-</style>
-<script>
-(function () {
-  if (localStorage.getItem('isDarkMode') === '1') {
-    document.documentElement.classList.add('dark');
-  }
-})();
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>页面未找到 · 空山一隅</title>
+
+    
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta property="og:site_name" content="空山一隅">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    
+    <meta property="og:image" content="/images/avatar.png">
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+
+    
+    
+
+    
+    
+    <link rel="alternate" type="application/atom+xml" title="空山一隅" href="/atom.xml">
+    
+
+    
+    <link rel="stylesheet" href="/styles/main.css">
+
+    
+    <style>
+    :root {
+      --color-primary: #4270f5;
+      --color-primary-hover: #c62828;
+      --container-width: 720px;
+      --font-stack-body: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    </style>
+
+    
+    <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('kehua-theme');
+        var preset = "light";
+        var theme;
+        if (saved === 'dark' || saved === 'light') {
+          theme = saved;
+        } else if (preset === 'dark' || preset === 'light') {
+          theme = preset;
+        } else {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    })();
+    </script>
+
+    
+    
+    
+
+    
 <meta name="description" content="something I wanna say...">
 </head>
-<body>
-<main class="mango-404">
-  <h2>看来您迷路了</h2>
-  <p>我们找不到您想要的页面，<a href="https://arkben.053200.xyz">返回首页</a>。</p>
-  <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <path d="M512 425.6a80 57.6 0 1 0 160 0 80 57.6 0 1 0-160 0Z" fill="var(--mango-brand, #4270f5)"></path>
-    <path d="M480 537.6a32 25.6 0 1 0 64 0 32 25.6 0 1 0-64 0Z" fill="var(--mango-brand, #4270f5)"></path>
-    <path d="M704 336c124.8 0 224-67.2 224-153.6S828.8 32 704 32s-224 67.2-224 153.6 99.2 150.4 224 150.4z" fill="var(--mango-brand, #4270f5)"></path>
-    <path d="M723.2 608c-83.2 0-160 22.4-214.4 60.8-9.6 6.4-12.8 22.4-6.4 35.2 6.4 12.8 22.4 16 32 6.4 48-32 115.2-51.2 188.8-51.2 134.4 0 252.8 67.2 252.8 140.8 0 76.8-118.4 140.8-252.8 140.8-51.2 0-105.6-6.4-147.2-19.2-3.2 0-211.2-54.4-384-198.4V176H144V736c0 6.4 3.2 16 6.4 19.2 182.4 156.8 403.2 214.4 409.6 214.4 41.6 12.8 105.6 19.2 160 19.2 166.4 0 300.8-86.4 300.8-192S889.6 608 723.2 608z" fill="var(--mango-brand, #4270f5)"></path>
-  </svg>
-</main>
+<body class="error-page">
+    
+<header class="header" role="banner">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="空山一隅">
+            
+                <span class="logo-text">空山一隅</span>
+            
+        </a>
+
+        <nav class="nav" aria-label="主导航">
+            
+                <a href="/post" class="nav-link">博客</a>
+            
+                <a href="/memos" class="nav-link">闪念</a>
+            
+        </nav>
+
+        <div class="header-actions">
+            <button class="btn-icon" id="theme-toggle" type="button" title="切换主题（Cmd/Ctrl+D）" aria-label="切换深浅模式">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            
+            <button class="btn-icon" id="search-toggle" type="button" title="搜索（Cmd/Ctrl+K）" aria-label="搜索">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            
+
+            <button class="btn-icon mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="打开移动端菜单" aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+    
+        <a href="/post" class="mobile-nav-link">博客</a>
+    
+        <a href="/memos" class="mobile-nav-link">闪念</a>
+    
+</div>
+
+
+
+
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
+    <div class="search-modal-content">
+        <div class="search-input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="搜索文章、闪念、标签..." autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+            <button type="button" class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+        </div>
+
+        <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果">
+            <p class="search-empty">输入关键词开始搜索 · 支持标题 / 摘要 / 标签 / 闪念</p>
+        </div>
+
+        <div class="search-shortcuts">
+            <span><kbd>↵</kbd> 打开</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> 切换</span>
+            <span><kbd>esc</kbd> 关闭</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <main class="main" role="main">
+        
+<div class="container">
+    <div class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title">页面未找到</h1>
+        <p class="error-message">抱歉，您访问的页面不存在或已被删除。</p>
+        <div class="error-actions">
+            <a href="/" class="error-btn">返回首页</a>
+            <a href="javascript:history.back();" class="error-btn error-btn-secondary">返回上页</a>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        
+        <p class="footer-text">克制 · 留白 · 一记一画</p>
+        
+
+        
+        <p class="footer-copyright">&copy; 2026 空山一隅</p>
+        
+
+        
+        <p class="footer-theme">Theme by <a href="https://kehua.me" target="_blank" rel="noopener noreferrer">kehua</a> · 移植 by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></p>
+        
+    </div>
+</footer>
+
+
+<button class="back-to-top" id="back-to-top" type="button" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+
+
+    
+    
+
+<script id="kehua-search-data" type="application/json">
+{
+  "posts": [
+    {
+      "title": "new posts",
+      "link": "/post/O8IqUW/",
+      "date": "2026-04-30T22:02:33+08:00",
+      "excerpt": "posts test 测试  测试  测试",
+      "tags": []
+    },{
+      "title": "安忍不动如大地  静虑深密如秘藏",
+      "link": "/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/",
+      "date": "2026-03-22T14:33:49+08:00",
+      "excerpt": "青岛湛山寺，是国内最年轻的天台宗道场，始建于1931年，1934年动工，1945年全部竣工。\n湛山寺由天台宗大德倓虚大师创建，虚云长老也曾在这里讲学，两位高僧共护这座山海古刹。\n近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。\n天台...",
+      "tags": []
+    }
+  ],
+  "tags": [
+    
+  ]
+}
+</script>
+
+
+
+    
+    <script src="/scripts/main.js" defer></script>
+
+    
+    
+
+    
 </body>
 </html>

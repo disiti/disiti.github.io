@@ -1,326 +1,310 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="posts test 测试  测试  测试">
-<meta name="generator" content="Gridea Pro">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
-<title>new posts | 空山一隅</title>
+    <title>new posts · 空山一隅</title>
 
-<meta property="og:type" content="article">
-<meta property="og:title" content="new posts">
-<meta property="og:description" content="posts test 测试  测试  测试">
+    
+    
+    <meta name="description" content="posts test 测试  测试  测试">
+    
 
-<meta property="og:image" content="/post-images/O8IqUW.JPG">
-<meta property="article:published_time" content="2026-04-30T22:02:33+08:00">
+    
+    <meta property="og:site_name" content="空山一隅">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="new posts">
+    <meta property="og:description" content="posts test 测试  测试  测试">
+    
+    <meta property="og:image" content="/post-images/O8IqUW.JPG">
+    
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="new posts">
+    <meta name="twitter:description" content="posts test 测试  测试  测试">
 
+    
+    
 
-<link rel="icon" href="/media/images/mango-logo.svg" type="image/svg+xml">
+    
+    
+    <link rel="alternate" type="application/atom+xml" title="空山一隅" href="/atom.xml">
+    
 
+    
+    <link rel="stylesheet" href="/styles/main.css">
 
-<link rel="stylesheet" href="/styles/bootstrap.min.css">
-<link rel="stylesheet" href="/styles/bootstrap-icons.css">
-<link rel="stylesheet" href="/styles/fancybox.css">
-<link rel="stylesheet" href="/styles/main.css">
-
-<style>
-:root {
-  --mango-brand: #4270f5;
-  --mango-accent: #ffc008;
-}
-.dark {
-  --mango-brand: #4270f5;
-  --mango-accent: #ffc008;
-}
-
-
-</style>
-
-<script>
-(function() {
-  function isDaytime() {
-    var h = new Date().getHours();
-    return h >= 6 && h < 18;
-  }
-  var themeMode = "light";
-  function setDark()    { localStorage.setItem("isDarkMode", "1"); document.documentElement.classList.add("dark"); }
-  function removeDark() { localStorage.setItem("isDarkMode", "0"); document.documentElement.classList.remove("dark"); }
-  var saved = localStorage.getItem("isDarkMode");
-  if (saved === "1" || saved === "0") {
-    saved === "1" ? setDark() : removeDark();
-  } else if (themeMode === "auto") {
-    isDaytime() ? removeDark() : setDark();
-  } else if (themeMode === "dark") {
-    setDark();
-  } else {
-    removeDark();
-  }
-  if (themeMode === "auto" && !saved) {
-    function nextChange() {
-      var now = new Date(), next = new Date();
-      if (isDaytime()) { next.setHours(18, 0, 0, 0); }
-      else { next.setHours(6, 0, 0, 0); if (next <= now) next.setDate(next.getDate() + 1); }
-      return next.getTime() - now.getTime();
+    
+    <style>
+    :root {
+      --color-primary: #4270f5;
+      --color-primary-hover: #c62828;
+      --container-width: 720px;
+      --font-stack-body: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
-    function schedule() {
-      setTimeout(function () {
-        if (!localStorage.getItem("isDarkMode")) {
-          isDaytime() ? removeDark() : setDark();
-          schedule();
+    </style>
+
+    
+    <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('kehua-theme');
+        var preset = "light";
+        var theme;
+        if (saved === 'dark' || saved === 'light') {
+          theme = saved;
+        } else if (preset === 'dark' || preset === 'light') {
+          theme = preset;
+        } else {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
-      }, nextChange());
-    }
-    schedule();
-  }
-  window.switchDarkMode = function () {
-    localStorage.getItem("isDarkMode") === "1" ? removeDark() : setDark();
-  };
-})();
-</script>
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    })();
+    </script>
 
+    
+    
+    
 
-
+    
 <meta name="description" content="posts test 测试 测试 测试">
 </head>
-<body class="post-detail">
+<body class="post">
+    
+<header class="header" role="banner">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="空山一隅">
+            
+                <span class="logo-text">空山一隅</span>
+            
+        </a>
 
-<header class="header sticky-top">
-  <div class="container">
-    <div class="top">
-      <button class="mobile_an" type="button" aria-label="打开菜单" data-mango-toggle="mobile_right_nav">
-        <i class="bi bi-list"></i>
-      </button>
-      <div class="top_l">
-        <h1 class="logo">
-          <a href="https://arkben.053200.xyz" title="空山一隅">
+        <nav class="nav" aria-label="主导航">
             
-            <b>空山一隅</b>
-          </a>
-        </h1>
-        <nav class="header-menu">
-          <ul id="menu-menu-1" class="header-menu-ul">
-            <li class="menu-item menu-item-home">
-              <a href="https://arkben.053200.xyz"><i class="bi bi-house-door-fill me-1"></i>首页</a>
-            </li>
+                <a href="/post" class="nav-link">博客</a>
             
-              
-                <li class="menu-item">
-                  <a href="/post"><i class="bi bi-bookmark-fill me-1"></i>博客</a>
-                </li>
-              
-                <li class="menu-item">
-                  <a href="/memos"><i class="bi bi-bookmark-fill me-1"></i>闪念</a>
-                </li>
-              
+                <a href="/memos" class="nav-link">闪念</a>
             
-            
-          </ul>
         </nav>
-      </div>
-      <div class="top_r">
-        <div class="top_r_an theme-switch me-4" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
-          <i class="bi bi-lightbulb-fill"></i>
+
+        <div class="header-actions">
+            <button class="btn-icon" id="theme-toggle" type="button" title="切换主题（Cmd/Ctrl+D）" aria-label="切换深浅模式">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            
+            <button class="btn-icon" id="search-toggle" type="button" title="搜索（Cmd/Ctrl+K）" aria-label="搜索">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            
+
+            <button class="btn-icon mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="打开移动端菜单" aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-        
-        <button class="top_r_an" type="button" data-mango-toggle="c_sousuo" aria-label="打开搜索">
-          <i class="bi bi-search"></i>
-        </button>
-        
-      </div>
     </div>
-  </div>
 </header>
 
 
-<div class="offcanvas offcanvas-top" tabindex="-1" id="c_sousuo" aria-labelledby="c_sousuoLabel">
-  <div class="container">
-    <button type="button" class="btn-close" data-mango-dismiss="c_sousuo" aria-label="Close"></button>
-    <div class="row justify-content-center">
-      <div class="col-10 col-lg-6 search_box">
-        <form class="ss_a clearfix" onsubmit="return false;">
-          <input id="mango-search-input" name="s" autocomplete="off" type="search" placeholder="输入关键词后回车搜索…" aria-label="搜索">
-          <button type="submit" title="搜索"><i class="bi bi-search"></i></button>
-        </form>
-        <div id="mango-search-results" class="mango-search-results" aria-live="polite"></div>
-        <p class="mango-search-tip">本地搜索 · 标题 / 标签 / 摘要 全文匹配 · ESC 关闭</p>
-      </div>
-    </div>
-  </div>
+<div class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+    
+        <a href="/post" class="mobile-nav-link">博客</a>
+    
+        <a href="/memos" class="mobile-nav-link">闪念</a>
+    
 </div>
 
 
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="mobile_right_nav">
-  <div class="mobile_head">
-    <div class="mobile_head_logo">
-      <a href="https://arkben.053200.xyz" title="空山一隅">
-        
-        <b>空山一隅</b>
-      </a>
+
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
+    <div class="search-modal-content">
+        <div class="search-input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="搜索文章、闪念、标签..." autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+            <button type="button" class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+        </div>
+
+        <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果">
+            <p class="search-empty">输入关键词开始搜索 · 支持标题 / 摘要 / 标签 / 闪念</p>
+        </div>
+
+        <div class="search-shortcuts">
+            <span><kbd>↵</kbd> 打开</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> 切换</span>
+            <span><kbd>esc</kbd> 关闭</span>
+        </div>
     </div>
-    <div class="theme-switch" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
-      <i class="bi bi-lightbulb-fill"></i>
-    </div>
-    <button type="button" class="btn-close text-reset" data-mango-dismiss="mobile_right_nav" aria-label="关闭"></button>
-  </div>
-  <div id="sjcldnav" class="menu-zk">
-    <ul id="menu-mobile">
-      <li class="menu-item">
-        <a href="https://arkben.053200.xyz">首页</a>
-      </li>
-      
-        
-          <li class="menu-item"><a href="/post">博客</a></li>
-        
-          <li class="menu-item"><a href="/memos">闪念</a></li>
-        
-      
-      
-    </ul>
-  </div>
 </div>
 
 
-<div id="reading-progress" class="reading-progress" aria-hidden="true"><span></span></div>
 
 
+    <main class="main" role="main">
+        
+<article class="article-detail">
 
-
-
-<section class="index_area">
-  <div class="container">
-    <div class="row g-4">
-      
-<div class="col-lg-12">
-  <div class="post_container_title">
-    <h1>new posts</h1>
-    <p>
-      <span><i class="bi bi-clock"></i>2026-04-30T22:02:33+08:00</span>
-      
-      <span><i class="bi bi-eye"></i>
-        <span class="post-views" data-mango-views="O8IqUW" id="busuanzi_value_page_pv">—</span>
-      </span>
-      <span><i class="bi bi-stopwatch"></i>1 min read 分钟阅读</span>
-    </p>
-  </div>
-
-  <div class="post_container">
-    <article class="wznrys">
-      <p>posts test 测试  测试  测试<img src="/post-images/1777558017442051000_0.JPG" alt="" /></p>
-
-    </article>
+    <header class="article-header">
+        <h1 class="article-title">new posts</h1>
+        <div class="article-meta">
+            <time class="article-date" datetime="2026-04-30T22:02:33+08:00">2026-04-30T22:02:33+08:00</time>
+            
+            <span class="article-meta-sep">·</span>
+            <span class="article-reading-time">1 min read 分钟阅读</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-word-count">21 字</span>
+        </div>
+    </header>
 
     
-  </div>
-
-  <div class="post_author">
-    <div class="post_author_l">
-      <img src="/images/avatar.png" width="60" height="60" alt="空山一隅">
-      <span>空山一隅</span>
+    <div class="article-cover">
+        <img src="/post-images/O8IqUW.JPG" alt="new posts">
     </div>
-    <div class="post_author_r">
-      <div class="post_author_icon">
-        <a href="#post_comment_anchor" title="评论">
-          <i class="bi bi-chat-square-dots-fill"></i>
-          <small class="count" id="gridea-comments-count">0</small>
-        </a>
-        <a href="javascript:;" data-action="like" data-id="O8IqUW" class="specsZan">
-          <i class="bi bi-hand-thumbs-up-fill"></i>
-          <small class="count">0</small>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="next_prev_posts" data-mango-prevnext="O8IqUW">
     
-    <div class="prev_next_box nav_previous"></div>
-    <div class="prev_next_box nav_next"></div>
-  </div>
 
-  <div class="post_related mb-3" data-mango-related="O8IqUW" style="display:none;">
-    <h3 class="widget-title">相关文章</h3>
-    <div class="post_related_list_wrap"></div>
-  </div>
+    <div class="article-content">
+        <p>posts test 测试  测试  测试<img src="/post-images/1777558017442051000_0.JPG" alt="" /></p>
 
-  <div class="post_comment" id="post_comment_anchor">
-  <div id="comments" class="comments-area">
-    <h3 class="comments-title">
-      <i class="bi bi-filter me-2"></i>评论 <small>(由 Gridea Pro 评论服务接管)</small>
-    </h3>
+    </div>
 
-    <!--
-      Gridea Pro 标准评论容器：
-      由 Gridea Pro 内置或用户安装的评论服务（Disqus / Waline / Twikoo / Giscus / Artalk 等）
-      在 “高级注入 → <body> 末尾注入代码” 中挂载到 #gridea-comments 上。
-      原 Mango 评论 UI 样式仍然在 main.css 中保留，第三方评论组件可读到这些 CSS token。
-    -->
+    
+
+    
+    
+</article>
+
+
+
+<section class="comments-section" id="comments">
+    <h3 class="comments-title">评论</h3>
+
+    
     <div id="gridea-comments"
-         data-post-slug="O8IqUW"
+         data-gridea-comments="true"
          data-post-link="/post/O8IqUW/"
          data-post-title="new posts">
-      <div class="no-comments">
-        <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48" aria-hidden="true">
-          <path d="M512 64C264.6 64 64 248.6 64 480c0 90.5 30.7 174.6 82.7 242.4L96 960l243.7-77.5C403.6 904.5 456.4 916 512 916c247.4 0 448-184.6 448-436S759.4 64 512 64z" fill="currentColor"></path>
-        </svg>
-        <p>评论区由 Gridea Pro 评论服务驱动。请在主题设置 → 高级注入 → <code>&lt;body&gt; 末尾注入代码</code> 中挂载评论组件。</p>
-      </div>
+
+        
+        <div class="comments-placeholder">
+            <div class="comment-form-skeleton">
+                <textarea class="comment-textarea" placeholder="写下你的评论..." disabled></textarea>
+                <div class="comment-form-footer">
+                    <div class="comment-form-info">
+                        <input class="comment-input" placeholder="昵称 *" disabled>
+                        <input class="comment-input" placeholder="邮箱 *" disabled>
+                        <input class="comment-input" placeholder="网站（选填）" disabled>
+                    </div>
+                    <div class="comment-form-actions">
+                        <button class="comment-submit" disabled>发表评论</button>
+                    </div>
+                </div>
+            </div>
+            <p class="comments-placeholder-note">评论功能由 Gridea Pro 评论服务驱动，请在 Gridea Pro 设置中开启对应服务（Disqus / Gitalk / Waline / Twikoo 等）。</p>
+        </div>
     </div>
-  </div>
-</div>
-
-</div>
-
-
-
-    </div>
-  </div>
 </section>
 
 
 
-<footer class="footbox">
-  <div class="container">
-    <div class="copyright">
-      
-        &copy; 2026 空山一隅.
-      
-      <a href="https://github.com/Gridea-Pro/gridea-pro" rel="external nofollow" target="_blank" style="color: #fff;">Gridea Pro</a> 强力驱动.
-      <p class="hidden">Theme by <a href="https://github.com/jkjoy/Typecho-Theme-Mango" rel="external nofollow" target="_blank" style="color: #fff;">老孙 / HUiTHEME</a> · Jinja2 移植版.</p>
-      
+    </main>
+
+    
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        
+        <p class="footer-text">克制 · 留白 · 一记一画</p>
+        
+
+        
+        <p class="footer-copyright">&copy; 2026 空山一隅</p>
+        
+
+        
+        <p class="footer-theme">Theme by <a href="https://kehua.me" target="_blank" rel="noopener noreferrer">kehua</a> · 移植 by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></p>
+        
     </div>
-  </div>
 </footer>
 
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<button class="back-to-top" id="back-to-top" type="button" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
 
 
 
-<button class="scrollToTopBtn" title="返回顶部" aria-label="返回顶部"><i class="bi bi-chevron-up"></i></button>
+    
+    
 
-
-
-<script src="/scripts/jquery.min.js"></script>
-<script src="/scripts/fancybox.js"></script>
-<script>
-window.MangoConfig = window.MangoConfig || {};
-window.MangoConfig.siteUrl = "https://arkben.053200.xyz";
-window.MangoConfig.searchEnabled = true;
-window.MangoConfig.showCodeCopy = true;
-window.MangoConfig.showReadingProgress = true;
-window.MangoConfig.showBackToTop = true;
-window.MangoConfig.showSidebarToc = false;
-window.MangoConfig.memosShowHeatmap = true;
+<script id="kehua-search-data" type="application/json">
+{
+  "posts": [
+    {
+      "title": "new posts",
+      "link": "/post/O8IqUW/",
+      "date": "2026-04-30T22:02:33+08:00",
+      "excerpt": "posts test 测试  测试  测试",
+      "tags": []
+    },{
+      "title": "安忍不动如大地  静虑深密如秘藏",
+      "link": "/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/",
+      "date": "2026-03-22T14:33:49+08:00",
+      "excerpt": "青岛湛山寺，是国内最年轻的天台宗道场，始建于1931年，1934年动工，1945年全部竣工。\n湛山寺由天台宗大德倓虚大师创建，虚云长老也曾在这里讲学，两位高僧共护这座山海古刹。\n近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。\n天台...",
+      "tags": []
+    }
+  ],
+  "tags": [
+    
+  ]
+}
 </script>
-<script src="/scripts/main.js"></script>
 
 
 
+    
+    <script src="/scripts/main.js" defer></script>
 
+    
+    
+
+    
+
+<script>
+  window.__KEHUA_PAGE_FLAGS__ = {
+    readingProgress: true,
+    codeCopy: true
+  };
+</script>
 
 </body>
 </html>
