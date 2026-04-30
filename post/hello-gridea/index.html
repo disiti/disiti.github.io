@@ -1,151 +1,289 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="/styles/main.min.css">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="👏  欢迎使用 Gridea ！
+✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意&amp;hellip; &amp;hellip;
+
+Github
+Gridea 主页
+示例网站
+特性👇
+📝  你可以使用最酷的 Markdown 语法，进行快速创作
+🌉  你可以给文章配上精美的封面图和在...">
+<meta name="generator" content="Gridea Pro">
+
+<title>Hello Gridea | Gridea Pro</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello Gridea">
+<meta property="og:description" content="👏  欢迎使用 Gridea ！
+✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意&amp;hellip; &amp;hellip;
+
+Github
+Gridea 主页
+示例网站
+特性👇
+📝  你可以使用最酷的 Markdown 语法，进行快速创作
+🌉  你可以给文章配上精美的封面图和在...">
+
+<meta property="og:image" content="/post-images/hello-gridea.png">
+<meta property="article:published_time" content="2018-12-12T00:00:00+08:00">
 
 
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="icon" href="/media/images/mango-logo.svg" type="image/svg+xml">
 
 
-<meta name="description" content="Welcome to Gridea Pro">
-<meta property="og:site_name" content="Gridea Pro">
-<meta property="og:title" content="Gridea Pro">
-<meta property="og:description" content="Welcome to Gridea Pro">
+<link rel="stylesheet" href="/styles/bootstrap.min.css">
+<link rel="stylesheet" href="/styles/bootstrap-icons.css">
+<link rel="stylesheet" href="/styles/fancybox.css">
+<link rel="stylesheet" href="/styles/main.css">
 
-<meta property="og:image" content="/images/avatar.png">
+<style>
+:root {
+  --mango-brand: #4270f5;
+  --mango-accent: #ffc008;
+}
+.dark {
+  --mango-brand: #4270f5;
+  --mango-accent: #ffc008;
+}
 
-<meta property="og:url" content="https://arkben.053200.xyz">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gridea Pro">
-<meta name="twitter:description" content="Welcome to Gridea Pro">
 
-<meta name="twitter:image" content="/images/avatar.png">
+</style>
 
+<script>
+(function() {
+  function isDaytime() {
+    var h = new Date().getHours();
+    return h >= 6 && h < 18;
+  }
+  var themeMode = "auto";
+  function setDark()    { localStorage.setItem("isDarkMode", "1"); document.documentElement.classList.add("dark"); }
+  function removeDark() { localStorage.setItem("isDarkMode", "0"); document.documentElement.classList.remove("dark"); }
+  var saved = localStorage.getItem("isDarkMode");
+  if (saved === "1" || saved === "0") {
+    saved === "1" ? setDark() : removeDark();
+  } else if (themeMode === "auto") {
+    isDaytime() ? removeDark() : setDark();
+  } else if (themeMode === "dark") {
+    setDark();
+  } else {
+    removeDark();
+  }
+  if (themeMode === "auto" && !saved) {
+    function nextChange() {
+      var now = new Date(), next = new Date();
+      if (isDaytime()) { next.setHours(18, 0, 0, 0); }
+      else { next.setHours(6, 0, 0, 0); if (next <= now) next.setDate(next.getDate() + 1); }
+      return next.getTime() - now.getTime();
+    }
+    function schedule() {
+      setTimeout(function () {
+        if (!localStorage.getItem("isDarkMode")) {
+          isDaytime() ? removeDark() : setDark();
+          schedule();
+        }
+      }, nextChange());
+    }
+    schedule();
+  }
+  window.switchDarkMode = function () {
+    localStorage.getItem("isDarkMode") === "1" ? removeDark() : setDark();
+  };
+})();
+</script>
 
-  <title>Hello Gridea | Gridea Pro</title>
-  
-<meta property="og:title" content="Hello Gridea" />
-<meta property="og:type" content="article" />
-
-<meta property="og:image" content="/post-images/hello-gridea.png" />
 
 
 <meta name="description" content="👏 欢迎使用 Gridea ！ ✍️ Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意&amp;hellip; &amp;hellip; Github Gridea 主页 示例网站 特性👇 📝 你可以使用最酷的 Markdown 语法，进行快速创作 🌉 你可以给文章配上精美的封面图和在文章任意位置">
 </head>
-<body class="flavor-theme">
+<body class="post-detail">
 
-  <header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <div class="top-bar">
-
-      
-      <div class="top-bar__left">
-        
-        <a href="https://arkben.053200.xyz" class="site-avatar-link" aria-label="返回首页">
-          <img class="site-avatar" src="/images/avatar.png" alt="Gridea Pro" />
-        </a>
-        
-        <a href="https://arkben.053200.xyz" class="site-name-link">Gridea Pro</a>
+<header class="header sticky-top">
+  <div class="container">
+    <div class="top">
+      <button class="mobile_an" type="button" aria-label="打开菜单" data-mango-toggle="mobile_right_nav">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="top_l">
+        <h1 class="logo">
+          <a href="https://arkben.053200.xyz" title="Gridea Pro">
+            
+            <b>Gridea Pro</b>
+          </a>
+        </h1>
+        <nav class="header-menu">
+          <ul id="menu-menu-1" class="header-menu-ul">
+            <li class="menu-item menu-item-home">
+              <a href="https://arkben.053200.xyz"><i class="bi bi-house-door-fill me-1"></i>首页</a>
+            </li>
+            
+              
+                <li class="menu-item">
+                  <a href="/"><i class="bi bi-bookmark-fill me-1"></i>首页</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/post"><i class="bi bi-bookmark-fill me-1"></i>博客</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/memos"><i class="bi bi-bookmark-fill me-1"></i>闪念</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/archives"><i class="bi bi-bookmark-fill me-1"></i>归档</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/tags"><i class="bi bi-bookmark-fill me-1"></i>标签</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/links"><i class="bi bi-bookmark-fill me-1"></i>友链</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/post/about"><i class="bi bi-bookmark-fill me-1"></i>关于</a>
+                </li>
+              
+            
+            
+              <li class="menu-item-has-children">
+                <a title="标签" href="https://arkben.053200.xyz/tags/"><i class="bi bi-folder-fill me-1"></i>标签</a>
+                <ul class="sub-menu" style="display: none;">
+                  
+                    <li class="menu-item">
+                      <a href="/tag/gridea/"><i class="bi bi-hash"></i>Gridea</a>
+                    </li>
+                  
+                </ul>
+              </li>
+            
+          </ul>
+        </nav>
       </div>
-
-      
-      <nav class="top-bar__nav" id="sectionBar">
+      <div class="top_r">
+        <div class="top_r_an theme-switch me-4" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
+          <i class="bi bi-lightbulb-fill"></i>
+        </div>
         
-        
-        <a class="nav-item" href="/">首页</a>
-        
-        <a class="nav-item" href="/post">博客</a>
-        
-        <a class="nav-item" href="/memos">闪念</a>
-        
-        <a class="nav-item" href="/archives">归档</a>
-        
-        <a class="nav-item" href="/tags">标签</a>
-        
-        <a class="nav-item" href="/links">友链</a>
-        
-        <a class="nav-item" href="/post/about">关于</a>
-        
-        
-      </nav>
-
-      
-      <div class="top-bar__right">
-        <button class="btn-icon btn-search search-btn" id="btnSearch" type="button" aria-label="搜索">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
+        <button class="top_r_an" type="button" data-mango-toggle="c_sousuo" aria-label="打开搜索">
+          <i class="bi bi-search"></i>
         </button>
-        <button class="btn-icon btn-nav-toggle mobile-only" id="btnNavToggle" type="button" aria-label="切换导航">
-          <div class="hamburger" id="hamburger">
-            <span class="hamburger__line hamburger__line--top"></span>
-            <span class="hamburger__line hamburger__line--bottom"></span>
-          </div>
-        </button>
+        
       </div>
-
     </div>
   </div>
 </header>
 
 
-<div class="header-spacer"></div>
-
-<script>
-(function(){
-  var btn = document.getElementById('btnNavToggle');
-  var nav = document.getElementById('sectionBar');
-  var hamburger = document.getElementById('hamburger');
-  if (!btn || !nav) return;
-  btn.addEventListener('click', function(){
-    nav.classList.toggle('top-bar__nav--open');
-    if (hamburger) hamburger.classList.toggle('is-active');
-  });
-  nav.querySelectorAll('.nav-item').forEach(function(item){
-    item.addEventListener('click', function(){
-      nav.classList.remove('top-bar__nav--open');
-      if (hamburger) hamburger.classList.remove('is-active');
-    });
-  });
-})();
-</script>
-
-  <main class="site-main" role="main">
-    
-<article class="article-container">
-  <header class="article-header">
-    <h1 class="article-title">Hello Gridea</h1>
-    <div class="article-meta">
-      
-      <span class="article-meta__item">2018-12-12</span>
-      
-      <span class="article-meta__sep">·</span>
-      <span class="article-meta__item">1 分钟阅读</span>
-      
+<div class="offcanvas offcanvas-top" tabindex="-1" id="c_sousuo" aria-labelledby="c_sousuoLabel">
+  <div class="container">
+    <button type="button" class="btn-close" data-mango-dismiss="c_sousuo" aria-label="Close"></button>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-6 search_box">
+        <form class="ss_a clearfix" onsubmit="return false;">
+          <input id="mango-search-input" name="s" autocomplete="off" type="search" placeholder="输入关键词后回车搜索…" aria-label="搜索">
+          <button type="submit" title="搜索"><i class="bi bi-search"></i></button>
+        </form>
+        <div id="mango-search-results" class="mango-search-results" aria-live="polite"></div>
+        <p class="mango-search-tip">本地搜索 · 标题 / 标签 / 摘要 全文匹配 · ESC 关闭</p>
+      </div>
     </div>
-    
-    <div class="article-header__tags">
-      
-      <a href="/tag/gridea/" class="tag-pill tag-pill--sm">Gridea</a>
-      
-    </div>
-    
-  </header>
-
-  
-  <div class="article-feature">
-    <img src="/post-images/hello-gridea.png" alt="Hello Gridea" />
   </div>
-  
+</div>
 
-  <div class="article-content">
-    <!-- more -->
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobile_right_nav">
+  <div class="mobile_head">
+    <div class="mobile_head_logo">
+      <a href="https://arkben.053200.xyz" title="Gridea Pro">
+        
+        <b>Gridea Pro</b>
+      </a>
+    </div>
+    <div class="theme-switch" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
+      <i class="bi bi-lightbulb-fill"></i>
+    </div>
+    <button type="button" class="btn-close text-reset" data-mango-dismiss="mobile_right_nav" aria-label="关闭"></button>
+  </div>
+  <div id="sjcldnav" class="menu-zk">
+    <ul id="menu-mobile">
+      <li class="menu-item">
+        <a href="https://arkben.053200.xyz">首页</a>
+      </li>
+      
+        
+          <li class="menu-item"><a href="/">首页</a></li>
+        
+          <li class="menu-item"><a href="/post">博客</a></li>
+        
+          <li class="menu-item"><a href="/memos">闪念</a></li>
+        
+          <li class="menu-item"><a href="/archives">归档</a></li>
+        
+          <li class="menu-item"><a href="/tags">标签</a></li>
+        
+          <li class="menu-item"><a href="/links">友链</a></li>
+        
+          <li class="menu-item"><a href="/post/about">关于</a></li>
+        
+      
+      
+        <li class="menu-item menu-item-has-children">
+          <a href="https://arkben.053200.xyz/tags/">标签</a>
+          <ul class="sub-menu">
+            
+              <li class="menu-item">
+                <a href="/tag/gridea/">Gridea (1)</a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div id="reading-progress" class="reading-progress" aria-hidden="true"><span></span></div>
+
+
+
+
+
+<section class="index_area">
+  <div class="container">
+    <div class="row g-4">
+      
+<div class="col-lg-8">
+  <div class="post_container_title">
+    <h1>Hello Gridea</h1>
+    <p>
+      <span><i class="bi bi-clock"></i>2018-12-12T00:00:00+08:00</span>
+      
+        <span><i class="bi bi-card-list"></i>
+          
+            <a href="/tag/gridea/">Gridea</a>
+          
+        </span>
+      
+      <span><i class="bi bi-eye"></i>
+        <span class="post-views" data-mango-views="hello-gridea" id="busuanzi_value_page_pv">—</span>
+      </span>
+      <span><i class="bi bi-stopwatch"></i>2 min read 分钟阅读</span>
+    </p>
+  </div>
+
+  <div class="post_container">
+    <article class="wznrys">
+      <!-- more -->
 <p>👏  欢迎使用 <strong>Gridea</strong> ！<br />
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意&hellip; &hellip;</p>
 <!-- more -->
@@ -168,123 +306,263 @@
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
 
+    </article>
+
+    
+      <div class="post_loop_tag">
+        
+          <em>
+            <a href="/tag/gridea/"><i class="bi bi-hash"></i>Gridea</a>
+          </em>
+        
+      </div>
+    
   </div>
 
-  
-  <nav class="post-nav">
-    
-    <div class="post-nav-card post-nav-card--empty">
-      <div class="post-nav-card__body">
-        <span class="post-nav-card__label meta-text">上一篇</span>
-        <span class="post-nav-card__empty-text">没有上一篇了~</span>
+  <div class="post_author">
+    <div class="post_author_l">
+      <img src="/images/avatar.png" width="60" height="60" alt="Gridea Pro">
+      <span>Gridea Pro</span>
+    </div>
+    <div class="post_author_r">
+      <div class="post_author_icon">
+        <a href="#post_comment_anchor" title="评论">
+          <i class="bi bi-chat-square-dots-fill"></i>
+          <small class="count" id="gridea-comments-count">0</small>
+        </a>
+        <a href="javascript:;" data-action="like" data-id="hello-gridea" class="specsZan">
+          <i class="bi bi-hand-thumbs-up-fill"></i>
+          <small class="count">0</small>
+        </a>
       </div>
     </div>
-    
-    
-    <div class="post-nav-card post-nav-card--empty post-nav-card--next">
-      <div class="post-nav-card__body">
-        <span class="post-nav-card__label meta-text">下一篇</span>
-        <span class="post-nav-card__empty-text">没有下一篇了~</span>
-      </div>
-    </div>
-    
-  </nav>
-
-  
-  
-
-
-</article>
-
-  </main>
-
-  <footer class="site-footer">
-  <div class="footer-inner">
-
-    
-    
-    <nav class="footer-nav" aria-label="页脚导航">
-      
-      <a class="footer-nav__link" href="/">首页</a>
-      
-      <a class="footer-nav__link" href="/post">博客</a>
-      
-      <a class="footer-nav__link" href="/memos">闪念</a>
-      
-      <a class="footer-nav__link" href="/archives">归档</a>
-      
-      <a class="footer-nav__link" href="/tags">标签</a>
-      
-      <a class="footer-nav__link" href="/links">友链</a>
-      
-      <a class="footer-nav__link" href="/post/about">关于</a>
-      
-    </nav>
-    
-
-    
-    <div class="footer-social">
-      
-      
-      
-      <a class="footer-social__link" href="/feed.xml" aria-label="RSS">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.18 15.64a2.18 2.18 0 110 4.36 2.18 2.18 0 010-4.36zM4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44zm0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/>
-        </svg>
-      </a>
-    </div>
-
-    
-    <div class="footer-copyright">
-      <p>&copy; 2026 Gridea Pro. All rights reserved.</p>
-    </div>
-
-    
-    
-    <div class="footer-custom">
-      Powered by Gridea Pro
-    </div>
-    
-
-    
-    <div class="footer-powered">
-      <span>Powered by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></span>
-    </div>
-
   </div>
-</footer>
 
-  
-  <div class="search-overlay" id="searchOverlay" style="display:none;">
-  <div class="search-modal">
-    <div class="search-header">
-      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" class="search-input" id="searchInput" placeholder="搜索文章..." autocomplete="off" />
-      <span class="search-kbd">&#8984;K</span>
-      <button class="search-close" id="searchClose" type="button" aria-label="关闭搜索">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
+  <div class="next_prev_posts" data-mango-prevnext="hello-gridea">
+    
+    <div class="prev_next_box nav_previous"></div>
+    <div class="prev_next_box nav_next"></div>
+  </div>
+
+  <div class="post_related mb-3" data-mango-related="hello-gridea" style="display:none;">
+    <h3 class="widget-title">相关文章</h3>
+    <div class="post_related_list_wrap"></div>
+  </div>
+
+  <div class="post_comment" id="post_comment_anchor">
+  <div id="comments" class="comments-area">
+    <h3 class="comments-title">
+      <i class="bi bi-filter me-2"></i>评论 <small>(由 Gridea Pro 评论服务接管)</small>
+    </h3>
+
+    <!--
+      Gridea Pro 标准评论容器：
+      由 Gridea Pro 内置或用户安装的评论服务（Disqus / Waline / Twikoo / Giscus / Artalk 等）
+      在 “高级注入 → <body> 末尾注入代码” 中挂载到 #gridea-comments 上。
+      原 Mango 评论 UI 样式仍然在 main.css 中保留，第三方评论组件可读到这些 CSS token。
+    -->
+    <div id="gridea-comments"
+         data-post-slug="hello-gridea"
+         data-post-link="/post/hello-gridea/"
+         data-post-title="Hello Gridea">
+      <div class="no-comments">
+        <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48" aria-hidden="true">
+          <path d="M512 64C264.6 64 64 248.6 64 480c0 90.5 30.7 174.6 82.7 242.4L96 960l243.7-77.5C403.6 904.5 456.4 916 512 916c247.4 0 448-184.6 448-436S759.4 64 512 64z" fill="currentColor"></path>
         </svg>
-      </button>
+        <p>评论区由 Gridea Pro 评论服务驱动。请在主题设置 → 高级注入 → <code>&lt;body&gt; 末尾注入代码</code> 中挂载评论组件。</p>
+      </div>
     </div>
-    <div class="search-results" id="searchResults"></div>
   </div>
 </div>
 
-<script src="/scripts/search.js"></script>
-  
+</div>
 
-  
+<div class="col-lg-4">
+  <div class="sidebar_sticky">
+    <div class="author_show_box">
 
-  
+      <div class="author_show_head">
+        <img src="/images/avatar.png"
+             alt="Gridea Pro"
+             class="avatar avatar-80 photo"
+             height="80" width="80"
+             loading="lazy" decoding="async">
+        <h3>Gridea Pro</h3>
+        
+      </div>
 
-  
+      <div class="author_show_info">
+        
+          <span><i class="bi bi-book"></i><b>文章</b>2</span>
+        
+        <span><i class="bi bi-tags"></i><b>标签</b>1</span>
+      </div>
+
+      
+        <ul class="author_post" data-mango-recent="3">
+          
+            
+              
+                <li>
+                  <div class="thumbnail-container">
+                    <img width="400" height="280"
+                         src="/post-images/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang.jpg"
+                         class="thumbnail"
+                         alt="安忍不动如大地  静虑深密如秘藏"
+                         loading="lazy" decoding="async">
+                  </div>
+                  <div class="author_title">
+                    <a href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/" class="stretched-link">安忍不动如大地  静虑深密如秘藏</a>
+                    <p>2026-03-22T14:33:49+08:00</p>
+                  </div>
+                </li>
+              
+            
+              
+                <li>
+                  <div class="thumbnail-container">
+                    <img width="400" height="280"
+                         src="/post-images/hello-gridea.png"
+                         class="thumbnail"
+                         alt="Hello Gridea"
+                         loading="lazy" decoding="async">
+                  </div>
+                  <div class="author_title">
+                    <a href="/post/hello-gridea/" class="stretched-link">Hello Gridea</a>
+                    <p>2018-12-12T00:00:00+08:00</p>
+                  </div>
+                </li>
+              
+            
+          
+        </ul>
+      
+
+      
+
+      
+        <aside class="widget widget_hot_posts">
+          <h3 class="widget-title">热门文章</h3>
+          <ul class="widget_hot_post" data-mango-hot="5">
+            
+              
+                
+                  <li class="widget_hot_li">
+                    <img width="400" height="280"
+                         src="/post-images/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang.jpg"
+                         class="thumbnail"
+                         alt="安忍不动如大地  静虑深密如秘藏"
+                         loading="lazy" decoding="async">
+                    <div class="hot_post_info">
+                      <h4>
+                        <a class="stretched-link" href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/">安忍不动如大地  静虑深密如秘藏</a>
+                      </h4>
+                      <p>2026-03-22T14:33:49+08:00</p>
+                    </div>
+                  </li>
+                
+              
+                
+                  <li class="widget_hot_li">
+                    <img width="400" height="280"
+                         src="/post-images/hello-gridea.png"
+                         class="thumbnail"
+                         alt="Hello Gridea"
+                         loading="lazy" decoding="async">
+                    <div class="hot_post_info">
+                      <h4>
+                        <a class="stretched-link" href="/post/hello-gridea/">Hello Gridea</a>
+                      </h4>
+                      <p>2018-12-12T00:00:00+08:00</p>
+                    </div>
+                  </li>
+                
+              
+            
+          </ul>
+        </aside>
+      
+
+      
+        <aside class="widget widget_hot_tags">
+          <h3 class="widget-title">热门标签</h3>
+          <div class="tagcloud">
+            
+              
+                <a href="/tag/gridea/"
+                   title="Gridea"
+                   class="tag-item">Gridea</a>
+              
+            
+          </div>
+        </aside>
+      
+
+      <aside class="widget widget_misc">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget_misc_ul">
+          <li>
+            <a href="https://arkben.053200.xyz/atom.xml"><i class="bi bi-rss me-1"></i> 订阅 RSS</a>
+          </li>
+          <li>
+            <a href="https://arkben.053200.xyz/archives/"><i class="bi bi-clock-history me-1"></i> 历史归档</a>
+          </li>
+          <li>
+            <a href="https://arkben.053200.xyz/about/"><i class="bi bi-person-circle me-1"></i> 关于本站</a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footbox">
+  <div class="container">
+    <div class="copyright">
+      
+        &copy; 2026 Gridea Pro.
+      
+      <a href="https://github.com/Gridea-Pro/gridea-pro" rel="external nofollow" target="_blank" style="color: #fff;">Gridea Pro</a> 强力驱动.
+      <p class="hidden">Theme by <a href="https://github.com/jkjoy/Typecho-Theme-Mango" rel="external nofollow" target="_blank" style="color: #fff;">老孙 / HUiTHEME</a> · Jinja2 移植版.</p>
+      
+    </div>
+  </div>
+</footer>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<button class="scrollToTopBtn" title="返回顶部" aria-label="返回顶部"><i class="bi bi-chevron-up"></i></button>
+
+
+
+<script src="/scripts/jquery.min.js"></script>
+<script src="/scripts/fancybox.js"></script>
+<script>
+window.MangoConfig = window.MangoConfig || {};
+window.MangoConfig.siteUrl = "https://arkben.053200.xyz";
+window.MangoConfig.searchEnabled = true;
+window.MangoConfig.showCodeCopy = true;
+window.MangoConfig.showReadingProgress = true;
+window.MangoConfig.showBackToTop = true;
+window.MangoConfig.showSidebarToc = true;
+window.MangoConfig.memosShowHeatmap = true;
+</script>
+<script src="/scripts/main.js"></script>
+
+
+
+
 
 </body>
 </html>
