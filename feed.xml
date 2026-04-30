@@ -6,7 +6,7 @@
     <description>something I wanna say...</description>
     <language>zh-cn</language>
     <generator>Gridea Pro</generator>
-    <lastBuildDate>Sun, 19 Apr 2026 18:32:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 21:45:18 +0800</lastBuildDate>
     <atom:link href="https://arkben.053200.xyz/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <item>
       <title>安忍不动如大地  静虑深密如秘藏</title>
@@ -19,7 +19,7 @@
 近代大德明哲张老是湛山寺的中兴祖师，天台宗风在此传承。<br />
 天台宗讲究<strong>教观总持</strong>，以教明理，以观修行，明理与实修并行，不偏不废。</p>
 ]]></description>
-      <enclosure url="https://arkben.053200.xyz/post-images/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang.jpg" length="0" type="image/jpeg"></enclosure>
+      <enclosure url="https://raw.githubusercontent.com/disiti/disiti.github.io/refs/heads/master/post-images/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang.jpg" length="0" type="image/jpeg"></enclosure>
     </item>
   </channel>
 </rss>
