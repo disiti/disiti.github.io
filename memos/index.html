@@ -1,160 +1,308 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="telephone=no" name="format-detection"/>
+<meta charset="UTF-8">
 <meta name="renderer" content="webkit">
-<link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="/media/scripts/jquery.js"></script>
-<script type="text/javascript" src="/media/scripts/basic.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="something I wanna say...">
+<meta name="generator" content="Gridea Pro">
+
+<title>闪念 | 空山一隅</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="空山一隅">
+<meta property="og:description" content="something I wanna say...">
+
+
+
+<link rel="icon" href="/media/images/mango-logo.svg" type="image/svg+xml">
+
+
+<link rel="stylesheet" href="/styles/bootstrap.min.css">
+<link rel="stylesheet" href="/styles/bootstrap-icons.css">
+<link rel="stylesheet" href="/styles/fancybox.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+<style>
+:root {
+  --mango-brand: #4270f5;
+  --mango-accent: #ffc008;
+}
+.dark {
+  --mango-brand: #4270f5;
+  --mango-accent: #ffc008;
+}
+
+
+</style>
+
+<script>
+(function() {
+  function isDaytime() {
+    var h = new Date().getHours();
+    return h >= 6 && h < 18;
+  }
+  var themeMode = "light";
+  function setDark()    { localStorage.setItem("isDarkMode", "1"); document.documentElement.classList.add("dark"); }
+  function removeDark() { localStorage.setItem("isDarkMode", "0"); document.documentElement.classList.remove("dark"); }
+  var saved = localStorage.getItem("isDarkMode");
+  if (saved === "1" || saved === "0") {
+    saved === "1" ? setDark() : removeDark();
+  } else if (themeMode === "auto") {
+    isDaytime() ? removeDark() : setDark();
+  } else if (themeMode === "dark") {
+    setDark();
+  } else {
+    removeDark();
+  }
+  if (themeMode === "auto" && !saved) {
+    function nextChange() {
+      var now = new Date(), next = new Date();
+      if (isDaytime()) { next.setHours(18, 0, 0, 0); }
+      else { next.setHours(6, 0, 0, 0); if (next <= now) next.setDate(next.getDate() + 1); }
+      return next.getTime() - now.getTime();
+    }
+    function schedule() {
+      setTimeout(function () {
+        if (!localStorage.getItem("isDarkMode")) {
+          isDaytime() ? removeDark() : setDark();
+          schedule();
+        }
+      }, nextChange());
+    }
+    schedule();
+  }
+  window.switchDarkMode = function () {
+    localStorage.getItem("isDarkMode") === "1" ? removeDark() : setDark();
+  };
+})();
+</script>
+
+
+
+<meta name="description" content="something I wanna say...">
+</head>
+<body class="memos">
+
+<header class="header sticky-top">
+  <div class="container">
+    <div class="top">
+      <button class="mobile_an" type="button" aria-label="打开菜单" data-mango-toggle="mobile_right_nav">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="top_l">
+        <h1 class="logo">
+          <a href="https://arkben.053200.xyz" title="空山一隅">
+            
+            <b>空山一隅</b>
+          </a>
+        </h1>
+        <nav class="header-menu">
+          <ul id="menu-menu-1" class="header-menu-ul">
+            <li class="menu-item menu-item-home">
+              <a href="https://arkben.053200.xyz"><i class="bi bi-house-door-fill me-1"></i>首页</a>
+            </li>
+            
+              
+                <li class="menu-item">
+                  <a href="/post"><i class="bi bi-bookmark-fill me-1"></i>博客</a>
+                </li>
+              
+                <li class="menu-item">
+                  <a href="/memos"><i class="bi bi-bookmark-fill me-1"></i>闪念</a>
+                </li>
+              
+            
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="top_r">
+        <div class="top_r_an theme-switch me-4" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
+          <i class="bi bi-lightbulb-fill"></i>
+        </div>
+        
+        <button class="top_r_an" type="button" data-mango-toggle="c_sousuo" aria-label="打开搜索">
+          <i class="bi bi-search"></i>
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="offcanvas offcanvas-top" tabindex="-1" id="c_sousuo" aria-labelledby="c_sousuoLabel">
+  <div class="container">
+    <button type="button" class="btn-close" data-mango-dismiss="c_sousuo" aria-label="Close"></button>
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-6 search_box">
+        <form class="ss_a clearfix" onsubmit="return false;">
+          <input id="mango-search-input" name="s" autocomplete="off" type="search" placeholder="输入关键词后回车搜索…" aria-label="搜索">
+          <button type="submit" title="搜索"><i class="bi bi-search"></i></button>
+        </form>
+        <div id="mango-search-results" class="mango-search-results" aria-live="polite"></div>
+        <p class="mango-search-tip">本地搜索 · 标题 / 标签 / 摘要 全文匹配 · ESC 关闭</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobile_right_nav">
+  <div class="mobile_head">
+    <div class="mobile_head_logo">
+      <a href="https://arkben.053200.xyz" title="空山一隅">
+        
+        <b>空山一隅</b>
+      </a>
+    </div>
+    <div class="theme-switch" onclick="switchDarkMode()" role="button" tabindex="0" aria-label="切换主题">
+      <i class="bi bi-lightbulb-fill"></i>
+    </div>
+    <button type="button" class="btn-close text-reset" data-mango-dismiss="mobile_right_nav" aria-label="关闭"></button>
+  </div>
+  <div id="sjcldnav" class="menu-zk">
+    <ul id="menu-mobile">
+      <li class="menu-item">
+        <a href="https://arkben.053200.xyz">首页</a>
+      </li>
+      
+        
+          <li class="menu-item"><a href="/post">博客</a></li>
+        
+          <li class="menu-item"><a href="/memos">闪念</a></li>
+        
+      
+      
+    </ul>
+  </div>
+</div>
+
+
+<div id="reading-progress" class="reading-progress" aria-hidden="true"><span></span></div>
+
+
+
+
+
+<section class="index_area">
+  <div class="container">
+    <div class="row g-4">
+      
+<div class="col-lg-8">
+  <div class="post_container_title">
+    <h1><i class="bi bi-lightning-fill me-2"></i>闪念</h1>
+    <p>那些不值得长篇大论，但值得记一笔的瞬间。</p>
+  </div>
+
+  
+
+  <div class="post_container mango-memos-list">
+    
+      <div class="mango-empty">
+        <i class="bi bi-feather"></i>
+        <p>还没有闪念。在 Gridea Pro 写一篇打了 <code>memo</code> 标签的文章，或在「闪念」面板里发布一条，就会显示在这里。</p>
+      </div>
+    
+  </div>
+</div>
+
+<div class="col-lg-4">
+  <div class="sidebar_sticky">
+    <div class="author_show_box">
+
+      <div class="author_show_head">
+        <img src="/images/avatar.png"
+             alt="空山一隅"
+             class="avatar avatar-80 photo"
+             height="80" width="80"
+             loading="lazy" decoding="async">
+        <h3>空山一隅</h3>
+        
+      </div>
+
+      <div class="author_show_info">
+        
+          <span><i class="bi bi-book"></i><b>文章</b>2</span>
+        
+        <span><i class="bi bi-tags"></i><b>标签</b>0</span>
+      </div>
+
+      
+
+      
+
+      
+
+      
+
+      <aside class="widget widget_misc">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget_misc_ul">
+          <li>
+            <a href="https://arkben.053200.xyz/atom.xml"><i class="bi bi-rss me-1"></i> 订阅 RSS</a>
+          </li>
+          <li>
+            <a href="https://arkben.053200.xyz/archives/"><i class="bi bi-clock-history me-1"></i> 历史归档</a>
+          </li>
+          <li>
+            <a href="https://arkben.053200.xyz/about/"><i class="bi bi-person-circle me-1"></i> 关于本站</a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footbox">
+  <div class="container">
+    <div class="copyright">
+      
+        &copy; 2026 空山一隅.
+      
+      <a href="https://github.com/Gridea-Pro/gridea-pro" rel="external nofollow" target="_blank" style="color: #fff;">Gridea Pro</a> 强力驱动.
+      <p class="hidden">Theme by <a href="https://github.com/jkjoy/Typecho-Theme-Mango" rel="external nofollow" target="_blank" style="color: #fff;">老孙 / HUiTHEME</a> · Jinja2 移植版.</p>
+      
+    </div>
+  </div>
+</footer>
+
+
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-  <title>闪念 - 空山一隅</title>
-  
-<meta name="description" content="something I wanna say...">
-</head>
-<body>
-  <div class="header">
-  <div class="logo_title">
-    <div class="title animated fadeInDown"><img src="/images/avatar.png"/>
-      <h1 title="空山一隅" class="weaklink"><a href="/">空山一隅</a></h1>
-      <div class="navbar weaklink">
-        <div class="normal_nav">
-          <div class="bitcron_nav_container">
-            <div class="bitcron_nav">
-              <div class="mixed_site_nav_wrap site_nav_wrap">
-                <ul class="mixed_site_nav site_nav sm sm-base">
-                  
-                  <li><a href="/post" class="selected active current nav__item">博客</a></li>
-                  
-                  <li><a href="/memos" class="selected active current nav__item">闪念</a></li>
-                  
-                </ul>
-                <div class="clear clear_nav_inline_end"></div>
-              </div>
-            </div>
-            <div class="clear clear_nav_end"></div>
-          </div>
-        </div>
-        <div class="hamberger"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
-      </div>
-    </div>
-  </div>
-  <div class="hidden_nav animated fadeInDown">
-    <div class="bitcron_nav_container">
-      <div class="bitcron_nav">
-        <div class="mixed_site_nav_wrap site_nav_wrap">
-          <ul class="mixed_site_nav site_nav sm sm-base">
-            
-            <li><a href="/post" class="selected active current nav__item">博客</a></li>
-            
-            <li><a href="/memos" class="selected active current nav__item">闪念</a></li>
-            
-          </ul>
-          <div class="clear clear_nav_inline_end"></div>
-        </div>
-      </div>
-      <div class="clear clear_nav_end"></div>
-    </div>
-  </div>
-</div>
 
-  <div class="main">
-    <div class="main-inner">
-      <div class="content">
-        
-<div class="memos_page">
-  <div class="list_with_title">
-    <div class="listing_title">闪念</div>
-  </div>
+<button class="scrollToTopBtn" title="返回顶部" aria-label="返回顶部"><i class="bi bi-chevron-up"></i></button>
 
-  
-  <p class="memos_empty">暂无闪念。</p>
-  
-</div>
 
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-<link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-<div class="site_footer_wrap"><div class="site_footer">
-  <div class="mysocials"><div class="my_socials">
-    
-    
-    
-    
-    <a href="https://github.com/shinonome-shizuka" title="github"><i class="fa fa-github"></i></a>
-    
-  </div>
-  <link href="/styles/main.css" type="text/css" rel="stylesheet"/>
-  </div>
-  <div class="copyright">Powered by Gridea Pro</div>
-</div></div>
-</div>
 
-<style type="text/css">a.back_to_top {
-    text-decoration: none;
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    background: #f0f0f0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    transition-duration: .5s;
-    transition-propety: background-color;
-    display: none;
-}
-a.back_to_top span {
-    color: #888;
-}
-a.back_to_top:hover {
-    cursor: pointer;
-    background: #dfdfdf;
-}
-a.back_to_top:hover span {
-    color: #555;
-}
-@media print, screen and (max-width: 580px) {
-    .back_to_top {
-        display: none !important;
-    }
-}
-</style>
-<a id="back_to_top" href="#" class="back_to_top"><span>&#9651;</span></a>
-<script type="text/javascript" src="/media/scripts/jquery.js"></script>
-<script>$(document).ready((function(_this) {
-  return function() {
-    var bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function() {
-        var st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function() {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
+<script src="/scripts/jquery.min.js"></script>
+<script src="/scripts/fancybox.js"></script>
+<script>
+window.MangoConfig = window.MangoConfig || {};
+window.MangoConfig.siteUrl = "https://arkben.053200.xyz";
+window.MangoConfig.searchEnabled = true;
+window.MangoConfig.showCodeCopy = true;
+window.MangoConfig.showReadingProgress = true;
+window.MangoConfig.showBackToTop = true;
+window.MangoConfig.showSidebarToc = false;
+window.MangoConfig.memosShowHeatmap = true;
 </script>
+<script src="/scripts/main.js"></script>
+
+
+
+
 
 </body>
 </html>

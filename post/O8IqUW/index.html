@@ -1,154 +1,30 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>new posts | 空山一隅</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1777596565">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="/styles/main.css">
-<link rel="alternate" type="application/rss+xml" title="new posts | 空山一隅 - RSS Feed" href="/feed.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
-  <meta name="description" content="posts test 测试 测试 测试">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>new posts | 空山一隅</title>
+	<link rel="stylesheet" href="/styles/main.css">
+	<style>
+		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+		.post-header { text-align: center; padding: 40px 0; }
+		.post-title { font-size: 2.5em; margin: 0; }
+		.post-meta { color: #999; margin-top: 10px; }
+		.post-content { margin-top: 40px; }
+		.post-content img { max-width: 100%; height: auto; }
+		.back-link { display: inline-block; margin-top: 40px; color: #0066cc; text-decoration: none; }
+	</style>
 </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://arkben.053200.xyz">
-  <img class="avatar" src="https://arkben.053200.xyz/images/avatar.png?v=1777596565" alt="">
-  </a>
-  <h1 class="site-title">
-    空山一隅
-  </h1>
-  <p class="site-description">
-    something I wanna say...
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/post" class="menu">
-          博客
-        </a>
-      
-    
-      
-        <a href="/memos" class="menu">
-          闪念
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
+<body>
+	<article class="post">
+		<header class="post-header">
+			<h1 class="post-title">new posts</h1>
+			<div class="post-meta">2026-04-30</div>
+		</header>
+		<div class="post-content"><p>posts test 测试  测试  测试<img src="/post-images/1777558017442051000_0.JPG" alt="" /></p>
 </div>
-
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              new posts
-            </h2>
-            <div class="post-info">
-              <span>
-                2026-04-30
-              </span>
-              <span>
-                1 分钟阅读
-              </span>
-              
-            </div>
-            
-            <div class="post-content-wrapper">
-              <div class="post-content" v-pre>
-                <p>posts test 测试  测试  测试<img src="/post-images/1777558017442051000_0.JPG" alt="" /></p>
-
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
-        </div>
-
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="/post/an-ren-bu-dong-ru-da-di-jing-lu-shen-mi-ru-mi-cang/">
-              <h3 class="post-title">
-                安忍不动如大地  静虑深密如秘藏
-              </h3>
-            </a>
-          </div>
-        
-
-        
-
-        <div class="site-footer">
-  Powered by Gridea Pro
-  <a class="rss" href="/feed.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
-    </div>
-
-    <script>
-      hljs.initHighlightingOnLoad()
-
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
-
-    </script>
-  </body>
+	</article>
+	<a href="/" class="back-link">← 返回首页</a>
+	<footer style="text-align: center; padding: 40px 0; color: #999;">Powered by Gridea Pro</footer>
+</body>
 </html>
