@@ -432,7 +432,7 @@ td {
   display: block;
   width: 100%;
   padding-top: 32.6%;
-  border-radius: 2px;
+  border-radius: 8px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -440,6 +440,12 @@ td {
 }
 .post-container .post .post-feature-image img {
   width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+
 }
 .post-container .post .post-feature-image:hover {
   transform: scale(1.0082);
